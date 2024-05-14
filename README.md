@@ -1,4 +1,4 @@
-# NodeJS challenge
+# Express-Nest Stocks API
 
 This monorepo (Turborepo) project containing two separate Node.js applications: **users-api** and **stocks-api**, built using Nest.js and Express.js respectively, along with a shared package for exporting TypeScript types for type safety across the project. There's also a postgreSQL db for storing data.
 
