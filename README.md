@@ -66,8 +66,3 @@ Once the project is locally installed (first step of "How to run locally"), run 
 - For unit tests: `pnpm test`
 - For e2e tests: `pnpm test:e2e`
 
-## Miscselaneous
-
-#### Reset endpoint (`/auth/reset`)
-
-Resetting user password feature is developed the way the instructions demanded. The app uses mailtrap to test it. But to send email "for real" you need to verify a real domain, which I didn't do. In the .env.example of the Users API are the credentials from my mailtrap account, so any reset mail will be sent to my mailbox in mailtrap. For that reason I included the new password in the response of the `/auth/reset` endpoint.
