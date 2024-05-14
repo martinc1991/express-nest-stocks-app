@@ -1,0 +1,29 @@
+{
+  "name": "jobsity-test",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "dev": "turbo run dev",
+    "start": "turbo run start",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "prisma:generate": "turbo prisma:generate",
+    "type-check": "turbo type-check",
+    "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
+    "test:e2e:watch": "turbo run test:e2e:watch",
+    "studio": "turbo run studio"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=7.0.0"
+  },
+  "packageManager": "pnpm@9.0.6"
+}

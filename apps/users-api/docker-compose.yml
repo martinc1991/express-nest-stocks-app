@@ -1,0 +1,22 @@
+name: jobsity-challenge-dev
+services:
+  dev-db:
+    image: postgres:15.4
+    ports:
+      - 5434:5432
+    env_file:
+      - .env
+    networks:
+      - delete-me-network
+
+  e2e-test-db:
+    image: postgres:15.4
+    ports:
+      - 5435:5432
+    env_file:
+      - .env.test
+    networks:
+      - delete-me-network
+
+networks:
+  delete-me-network:

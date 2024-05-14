@@ -1,0 +1,46 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "globalEnv": ["PORT"],
+  "pipeline": {
+    "build": {
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**", "public/dist/**"],
+      "dependsOn": ["^build"],
+      "env": ["NEXT_PUBLIC_API_HOST"]
+    },
+    "test": {
+      "outputs": ["coverage/**"],
+      "dependsOn": [],
+      "cache": false
+    },
+    "type-check": {
+      "cache": true
+    },
+    "lint": {
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "start": {
+      "cache": false,
+      "persistent": true
+    },
+    "prisma:generate": {
+      "cache": false
+    },
+    "studio": {
+      "persistent": true
+    },
+    "clean": {
+      "cache": false
+    },
+    "test:e2e": {
+      "cache": false
+    },
+    "test:e2e:watch": {
+      "persistent": true
+    }
+  }
+}

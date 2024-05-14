@@ -1,0 +1,17 @@
+{
+  "name": "contract",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "prisma:generate": "prisma generate --schema=../../apps/users-api/prisma/schema.prisma",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "MartinC",
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "5.13.0"
+  }
+}

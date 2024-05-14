@@ -1,0 +1,42 @@
+name: jobsity-challenge-stocks-app
+services:
+  users-db:
+    image: postgres:15.4
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    env_file:
+      - ./apps/users-api/.env.prod
+    networks:
+      - jobsity-test-app
+
+  users-api:
+    image: users-api:latest
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: users-api
+    ports:
+      - 3000:3000
+    env_file:
+      - ./apps/users-api/.env.prod
+    depends_on:
+      - users-db
+    networks:
+      - jobsity-test-app
+
+  stocks-api:
+    image: stocks-api:latest
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: stocks-api
+    depends_on:
+      - users-db
+    networks:
+      - jobsity-test-app
+
+networks:
+  jobsity-test-app:
